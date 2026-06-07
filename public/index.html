@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#ededed">
+  <meta name="description" content="AI 电子女友 — 随时随地陪你聊天">
+  <title>小七 💕</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="icon" type="image/png" href="/icon-192.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- 顶部栏 -->
+  <div id="header">
+    <div class="header-back" id="btn-back" style="display:none">‹</div>
+    <div class="header-info">
+      <div class="header-avatar">👧</div>
+      <div class="header-text">
+        <div class="header-name" id="header-name">小七 💕</div>
+        <div class="header-status" id="header-status">在线</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" id="btn-menu" title="设置">⋯</button>
+    </div>
+  </div>
+
+  <!-- 消息列表 -->
+  <div id="messages"></div>
+
+  <!-- 加载指示器 -->
+  <div id="typing-indicator" style="display:none">
+    <div class="typing-bubble">
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+    </div>
+  </div>
+
+  <!-- 底部输入区 -->
+  <div id="input-bar">
+    <input type="text" id="input" placeholder="说点什么..." autocomplete="off" maxlength="500">
+    <button id="btn-send">发送</button>
+  </div>
+
+  <!-- 设置面板（侧边滑出） -->
+  <div id="settings-overlay" style="display:none">
+    <div id="settings-panel">
+      <div class="settings-header">
+        <h3>⚙️ 设置</h3>
+        <button class="settings-close" id="btn-close-settings">✕</button>
+      </div>
+      <div class="settings-body">
+        <div class="settings-item">
+          <label>推送通知</label>
+          <span id="push-status" class="badge badge-off">未开启</span>
+          <button id="btn-push-toggle" class="btn-small">开启通知</button>
+        </div>
+        <div class="settings-item">
+          <label>API 配置</label>
+          <span id="api-status" class="badge badge-off">未配置</span>
+        </div>
+        <div class="settings-item">
+          <label>聊天记录</label>
+          <button id="btn-clear-chat" class="btn-small btn-danger">清空记录</button>
+        </div>
+        <div class="settings-item">
+          <label>添加到桌面</label>
+          <button id="btn-install" class="btn-small" style="display:none">安装 App</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 安装提示 -->
+  <div id="install-banner" style="display:none">
+    <div class="install-banner-content">
+      <span>📱 添加到主屏幕，像 App 一样使用</span>
+      <button id="btn-show-install">安装</button>
+      <button id="btn-dismiss-banner">✕</button>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
